@@ -2,43 +2,43 @@
     <div>
     	<iframe id="splash" width="960" height="480" src="banners/splash.html"></iframe>
         <div style="top: 70px;font-size: 75px;font-weight: bold;">
-        	What Happens Next?
+        	I ara què passarà?
        	</div>
 		<div style="font-weight: 500;top: 140px;left: 10px;font-size: 29px;">
-			COVID-19 Futures, Explained With Playable Simulations
+			El futur del COVID-19 explicat amb Simulacions Interactives
 		</div>
 		<div style="font-weight: 100;top: 189px;left: 10px;font-size: 19px;line-height: 21px;">
 			<b>
-				🕐 30 min play/read
+				🕐 30 min veure/llegir
 				&nbsp;&middot;&nbsp;
 			</b>
 			by
 			<a href="https://scholar.google.com/citations?user=_wHMGkUAAAAJ&amp;hl=en">Marcel Salathé</a>
-			(epidemiologist)
+			(epidemiòleg)
 			&
 			<a href="https://ncase.me/">Nicky Case</a>
-			(art/code)
+			(art/codi)
 		</div>
 	</div>
 </div>
 
-"The only thing to fear is fear itself" was stupid advice.
+"Només cal tenir por a la por mateixa". Consell per tontos.
 
-Sure, don't hoard toilet paper – but if policymakers fear fear itself, they'll downplay real dangers to avoid "mass panic". Fear's not the problem, it's how we *channel* our fear. Fear gives us energy to deal with dangers now, and prepare for dangers later.
+És clar, potser que no acumulem paper de WC - pero si els polítics tenen por a la por, tendiran a minitmitzar els perills reals per a evitar la "histèria col·lectiva". La por no és el problema, sinó com "canalitzem" aquesta por. La por ens dona energia per a afrontar el perills actuals i preparar-nos per als què vindran.
 
-Honestly, we (Marcel, epidemiologist + Nicky, art/code) are worried. We bet you are, too! That's why we've channelled our fear into making these **playable simulations**, so that *you* can channel your fear into understanding:
+Honradament, nosaltres (Marcel, epidemiòleg + Nicky, art/codi) estem preocupats. I pensem que tu també!. Per això hem decidit posar-nos a canalitzar la nostra por a través d'aquestes **simulacions interactives**,  i fer que *tu* transformis la por en coneixement:
 
-* **The Last Few Months** (epidemiology 101, SEIR model, R & R<sub>0</sub>)
-* **The Next Few Months** (lockdowns, contact tracing, masks)
-* **The Next Few Years** (loss of immunity? no vaccine?)
+* **Els Darrers Mesos** (epidemiologia bàsica,  model SEIR, R & R<sub>0</sub>)
+* **Els Pròxims Mesos** (confinaments, seguiment de contactes, mascaretes)
+* **Els Pròxims Anys** (pèrdua de la inmunitat? cap vacuna?)
 
-This guide (published May 1st, 2020. click this footnote!→[^timestamp]) is meant to give you hope *and* fear. To beat COVID-19 **in a way that also protects our mental & financial health**, we need optimism to create plans, and pessimism to create backup plans. As Gladys Bronwyn Stern once said, *“The optimist invents the airplane and the pessimist the parachute.”*
+L'objectiu d'aquesta guia (publicada el dia 1 de Maig de 2020, clica aquesta nota a peu de página!→[^timestamp]) és donar-te esperança *i* fer-te agafar por. Per a guanyar el COVID-19 **d'una forma que també protegim la nostra salut mental i financera**, necessitem optimisme per a dissenyar plans, i pessimisme per a idear un pla B. Com va dir un cop Gladys Bronwyn Stern, *“L'optimista inventa l'avió i el pessimista el paracaigudes.”*
 
-[^timestamp]: These footnotes will have sources, links, or bonus commentary. Like this commentary!
+[^timestamp]: Aquestes notes a peu de pàgina contenen referències, links i commentaris extres. Com aquest comentari!
     
-    **This guide was published on May 1st, 2020.** Many details will become outdated, but we're confident this guide will cover 95% of possible futures, and that Epidemiology 101 will remain forever useful.
+    **Aquesta guia va ser publicada el dia 1 de maig de 2020.** Hi ha molts detalls que quedaran obsolets, però tenim  confiança que aquesta guia cobreix el 95% dels possibles escenaris futurs, i que l'epidemiologia bàsica sempre serà útil.
 
-So, buckle in: we're about to experience some turbulence.
+Per tant, corda't el cinturó, que s'acosten turbulències.
 
 <div class="section chapter">
     <div>
@@ -47,17 +47,17 @@ So, buckle in: we're about to experience some turbulence.
     </div>
 </div>
 
-Pilots use flight simulators to learn how not to crash planes.
+Els pilots utilitzen simuladors per evitar que s'estrellin els avions.
 
-**Epidemiologists use epidemic simulators to learn how not to crash humanity.**
+**Els epidemiòlegs utilitzen simuladors per evitar que s'estrelli la humanitat.**
 
-So, let's make a very, *very* simple "epidemic flight simulator"! In this simulation, <icon i></icon> Infectious people can turn <icon s></icon> Susceptible people into more <icon i></icon> Infectious people:
+Per tant, fem primer un "simulador de vol per epidèmies" que sigui molt, *molt* senzill. En aquesta simulació les  <icon i></icon> persones infeccioses poden tranformar les  <icon s></icon> persones susceptibles en més <icon i></icon> persones infeccioses:
 
 ![](pics/spread.png)
 
-It's estimated that, *at the start* of a COVID-19 outbreak, the virus jumps from an <icon i></icon> to an <icon s></icon> every 4 days, *on average*.[^serial_interval] (remember, there's a lot of variation)
+S'estima que, *al principi* de l'esclat del COVID-19, el virus salta d'un <icon i></icon> a un altre  <icon s></icon> cada 4 dies, *de promige*.[^serial_interval] (recorda, hi ha molta variació)
 
-[^serial_interval]: “The mean [serial] interval was 3.96 days (95% CI 3.53–4.39 days)”. [Du Z, Xu X, Wu Y, Wang L, Cowling BJ, Ancel Meyers L](https://wwwnc.cdc.gov/eid/article/26/6/20-0357_article) (Disclaimer: Early release articles are not considered as final versions)
+[^serial_interval]: “L'interval [serial] mitjà era de 3.96 dies (95% CI 3.53–4.39 days)”. [Du Z, Xu X, Wu Y, Wang L, Cowling BJ, Ancel Meyers L](https://wwwnc.cdc.gov/eid/article/26/6/20-0357_article) (Avís: Els articles en pre-publicació no es consideren versions finals)
 
 If we simulate "double every 4 days" *and nothing else*, on a population starting with just 0.001% <span class="nowrap"><icon i></icon>,</span> what happens? 
 
