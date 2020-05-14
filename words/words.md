@@ -34,11 +34,11 @@ Honradament, nosaltres (Marcel, epidemiòleg + Nicky, art/codi) estem preocupats
 
 L'objectiu d'aquesta guia (publicada el dia 1 de Maig de 2020, clica aquesta nota a peu de página!→[^timestamp]) és donar-te esperança *i* fer-te agafar por. Per a guanyar el COVID-19 **d'una forma que també protegim la nostra salut mental i financera**, necessitem optimisme per a dissenyar plans, i pessimisme per a idear un pla B. Com va dir un cop Gladys Bronwyn Stern, *“L'optimista inventa l'avió i el pessimista el paracaigudes.”*
 
-[^timestamp]: Aquestes notes a peu de pàgina contenen referències, links i commentaris extres. Com aquest comentari!
+[^timestamp]: Aquestes notes a peu de pàgina contenen referències, links i commentaris extres. Com aquest!
     
     **Aquesta guia va ser publicada el dia 1 de maig de 2020.** Hi ha molts detalls que quedaran obsolets, però tenim  confiança que aquesta guia cobreix el 95% dels possibles escenaris futurs, i que l'epidemiologia bàsica sempre serà útil.
 
-Per tant, corda't el cinturó, que s'acosten turbulències.
+Per tant, corda't el cinturó, que s'acosten turbulències!
 
 <div class="section chapter">
     <div>
@@ -51,7 +51,7 @@ Els pilots utilitzen simuladors per evitar que s'estrellin els avions.
 
 **Els epidemiòlegs utilitzen simuladors per evitar que s'estrelli la humanitat.**
 
-Per tant, fem primer un "simulador de vol per epidèmies" que sigui molt, *molt* senzill. En aquesta simulació les  <icon i></icon> persones infeccioses poden tranformar les  <icon s></icon> persones susceptibles en més <icon i></icon> persones infeccioses:
+Per tant, fem primer un "simulador de vol per epidèmies" que sigui molt, *molt* senzill. En aquesta simulació les <icon i></icon> persones infeccioses poden tranformar les <icon s></icon> persones susceptibles en més <icon i></icon> persones infeccioses:
 
 ![](pics/spread.png)
 
@@ -59,126 +59,128 @@ S'estima que, *al principi* de l'esclat del COVID-19, el virus salta d'un <icon 
 
 [^serial_interval]: “L'interval [serial] mitjà era de 3.96 dies (95% CI 3.53–4.39 days)”. [Du Z, Xu X, Wu Y, Wang L, Cowling BJ, Ancel Meyers L](https://wwwnc.cdc.gov/eid/article/26/6/20-0357_article) (Avís: Els articles en pre-publicació no es consideren versions finals)
 
-If we simulate "double every 4 days" *and nothing else*, on a population starting with just 0.001% <span class="nowrap"><icon i></icon>,</span> what happens? 
+Si simulem "el doble cada 4 dies" *i res més*, en una població que comença només amb un 0.001% <span class="nowrap"><icon i></icon>,</span> què passa?
 
-**Click "Start" to play the simulation! You can re-play it later with different settings:** (technical caveats: [^caveats])
+**Clica a sobre de "Inici" per a veure la simulació! Pots tornar-la a veure després amb paràmetres diferents:** (detalls tècnics: [^caveats])
 
-[^caveats]: **Remember: all these simulations are super simplified, for educational purposes.**
+[^caveats]: **Recorda: totes aquestes simulacions són super simplidicades, amb finalitat didàctica.**
     
-    One simplification: When you tell this simulation "Infect 1 new person every X days", it's actually increasing # of infected by 1/X each day. Same for future settings in these simulations – "Recover every X days" is actually reducing # of infected by 1/X each day.
-    
-    Those *aren't* exactly the same, but it's close enough, and for educational purposes it's less opaque than setting the transmission/recovery rates directly.
+    Una simplificació: Quan en aquesta simulació diem "Infecta 1 persona nova cada X dies", en realitat s'incremente el nombre d'infectats per 1/X cada dia. El mateix per a altres paràmetres d'aquesta simulació - "Es recupara cada X dies" redueix el nombre d'infectats d'un 1/X cada dia.
+    De fet *no són* exactament el mateix, però s'assemblen prou i per al cas, això és menys opac que fixar les taxes de transmissió/recuperació directament.
 
 <div class="sim">
 		<iframe src="sim?stage=epi-1" width="800" height="540"></iframe>
 </div>
 
-This is the **exponential growth curve.** Starts small, then explodes. "Oh it's just a flu" to "Oh right, flus don't create *mass graves in rich cities*". 
+Aquesta és la **corba de creixement exponencial.** Comença fluix, i després explota. "Oh només és una grip" fins a "Oh vaja, les grips no provoquen que hi hagi *fosses comuns a grans ciutats*". 
 
 ![](pics/exponential.png)
 
-But, this simulation is wrong. Exponential growth, thankfully, can't go on forever. One thing that stops a virus from spreading is if others *already* have the virus:
+Però, aquesta simulació és falsa. El creixement exponencial, per sort, no es pot mantenir per sempre. Una cosa que para l'expansió del  virus és si *els altres ja el tenen*:
 
 ![](pics/susceptibles.png)
 
-The more <span class="nowrap"><icon i></icon>s</span> there are, the faster <span class="nowrap"><icon s></icon>s</span> become <span class="nowrap"><icon i></icon>s,</span> **but the fewer <span class="nowrap"><icon s></icon>s</span> there are, the *slower* <span class="nowrap"><icon s></icon>s</span> become <span class="nowrap"><icon i></icon>s.</span>**
+Com més <span class="nowrap"><icon i></icon>s</span> hi ha, més de pressa els <span class="nowrap"><icon s></icon>s</span> es tornrn <span class="nowrap"><icon i></icon>s,</span> **però com menys <span class="nowrap"><icon s></icon>s</span> hi ha, més *tarden* els <span class="nowrap"><icon s></icon>s</span> a ser <span class="nowrap"><icon i></icon>s.</span>**
 
-How's this change the growth of an epidemic? Let's find out:
+Com pot ser que això canviÏ el creixement de l'epidèmia? Veiem-ho:
 
 <div class="sim">
 		<iframe src="sim?stage=epi-2" width="800" height="540"></iframe>
 </div>
 
-This is the "S-shaped" **logistic growth curve.** Starts small, explodes, then slows down again.
+Aquesta és la **corba de creixement** en forma d'"S". Comença fluix, explota, i després es frena de nou.
 
-But, this simulation is *still* wrong. We're missing the fact that <icon i></icon> Infectious people eventually stop being infectious, either by 1) recovering, 2) "recovering" with lung damage, or 3) dying.
+Però, aquesta simulació *encara* és incorrecta. Ens falta el fet que <icon i></icon> la gent infecciosa podria deixar de ser-ho, perquè 1) es recupera, o 2) es "recupera amb els pulmons danyats" o 3) mor.
 
-For simplicity's sake, let's pretend that all <icon i></icon> Infectious people become <icon r></icon> Recovered. (Just remember that in reality, some are dead.) <span class="nowrap"><icon r></icon>s</span> can't be infected again, and let's pretend – *for now!* – that they stay immune for life.
+Per simplificar, anem a suposar que totes les <icon i></icon> persones infeccioses es recuperen <icon r></icon>. (només recorda que en realitat, algunes es moren). <span class="nowrap"><icon r></icon>s</span> no es poden tornar a nfectar, i posem per cas que – *per ara!* – queden inmunitzades per sempre. 
 
-With COVID-19, it's estimated you're <icon i></icon> Infectious for 10 days, *on average*.[^infectiousness] That means some folks will recover before 10 days, some after. **Here's what that looks like, with a simulation *starting* with 100% <span class="nowrap"><icon i></icon>:</span>**
+Amb el COVID-19, s'estima que ets icon i></icon> infecciós durant 10 dies, *de mitjana*.[^infectiousness] Aixo vol dir que alguns afortunats es recuperaran abans de 10 dies, uns altres després. **Aquí tenim la pinta que té, amb una simulació que *començag* amb el  100%  de <span class="nowrap"><icon i></icon>:</span>**
 
-[^infectiousness]: “The median communicable period \[...\] was 9.5 days.” [Hu, Z., Song, C., Xu, C. et al](https://link.springer.com/article/10.1007/s11427-020-1661-4) Yes, we know "median" is not the same as "average". For simplified educational purposes, close enough.
+[^infectiousness]: “La mediana del periode comunicable \[...\] era 9.5 dies.” [Hu, Z., Song, C., Xu, C. et al](https://link.springer.com/article/10.1007/s11427-020-1661-4) Si, ja sabem que la "mediana" noe és el mateix que la "mitjana". Per a finalitats didàctiques, són prou iguals.
 
 <div class="sim">
 		<iframe src="sim?stage=epi-3" width="800" height="540"></iframe>
 </div>
 
-This is the opposite of exponential growth, the **exponential decay curve.**
+TAixò és el contrari que el creixement exponencial, la **corba de decreixement exponencial.**
 
-Now, what happens if you simulate S-shaped logistic growth *with* recovery?
+I ara, què passa si simules un creixement logístics amb forma d'"S" *amb* recuperació?
 
 ![](pics/graphs_q.png)
 
-Let's find out.
+Veiem-ho!
 
-<b style='color:#ff4040'>Red curve</b> is *current* cases <span class="nowrap"><icon i></icon>,</span>    
-<b style='color:#999999'>Gray curve</b> is *total* cases (current + recovered <span class="nowrap"><icon r></icon>),</span>
-starts at just 0.001% <span class="nowrap"><icon i></icon>:</span>
+<b style='color:#ff4040'>La corba vermella</b> és la dels casos *actuals* <span class="nowrap"><icon i></icon>,</span>    
+<b style='color:#999999'>La corba gris</b> és el *total* de casos (actuals + recuperats <span class="nowrap"><icon r></icon>),</span>
+que comença just al 0.001% <span class="nowrap"><icon i></icon>:</span>
 
 <div class="sim">
 		<iframe src="sim?stage=epi-4" width="800" height="540"></iframe>
 </div>
 
-And *that's* where that famous curve comes from! It's not a bell curve, it's not even a "log-normal" curve. It has no name. But you've seen it a zillion times, and beseeched to flatten.
+I *aquí tenim* d'on ve la famosa corba! No té forma de campana, no tan sols és una corba "log-normal". IO té cap nom. Però l'hem vist infinitat de vegades, i sempre implorant que s'aplanés.
 
-This is the the **SIR Model**,[^sir]    
-(<icon s></icon>**S**usceptible <icon i></icon>**I**nfectious <icon r></icon>**R**ecovered)      
-the *second*-most important idea in Epidemiology 101:
+Aquest és el **Model SIR**,[^sir]    
+(<icon s></icon>**S**usceptible <icon i></icon>**I**nfeccióss <icon r></icon>**R**ecuperat)      
+el *segon* concepte més important de l'epidemiologia bàsica:
 
-[^sir]: For more technical explanations of the SIR Model, see [the Institute for Disease Modeling](https://www.idmod.org/docs/hiv/model-sir.html#) and [Wikipedia](https://en.wikipedia.org/wiki/Compartmental_models_in_epidemiology#The_SIR_model)
+[^sir]: Per a més explicacions tècniques del Model SIR, veieu [the Institute for Disease Modeling](https://www.idmod.org/docs/hiv/model-sir.html#) i [Wikipedia](https://en.wikipedia.org/wiki/Compartmental_models_in_epidemiology#The_SIR_model)
 
 ![](pics/sir.png)
 
-**NOTE: The simulations that inform policy are way, *way* more sophisticated than this!** But the SIR Model can still explain the same general findings, even if missing the nuances.
+**NOTA: Les simulacions que es fan servir per prendre de decisions de polítiques públiques son molt, *molt* més elaborades que aquesta!** Però el Model SIR ja serveix per treure onclusions generals, encara que li faltin els matisos.
 
-Actually, let's add one more nuance: before an <icon s></icon> becomes an <span class="nowrap"><icon i></icon>,</span> they first become <icon e></icon> Exposed. This is when they have the virus but can't pass it on yet – infect*ed* but not yet infect*ious*.
+Doncs, som-hi, posem-li un matís més: abans que un <icon s></icon> es torni un <span class="nowrap"><icon i></icon>,</span>, perimer ha de passar a ser un <icon e></icon> Exposat. Aixo vol dir que té e virusperò que no el pot passar encara - infec*tat*, però no infec*ciós*.
 
 ![](pics/seir.png)
 
-(This variant is called the **SEIR Model**[^seir], where the "E" stands for <icon e></icon> "Exposed". Note this *isn't* the everyday meaning of "exposed", when you may or may not have the virus. In this technical definition, "Exposed" means you definitely have it. Science terminology is bad.)
+(Aquesta variant s'anomena el **Model SEIR**[^seir], on la lletra "E" vol dir <icon e></icon> "Exposat". Fixa't que aquest *no és* el significat habitual de la paraula "exposet", que vol dir que pot tenir el virus o no. En aquesta definició tècnica, "Exposat" vol dir que no hi ha cap dubte que el tens. La terminologia científica és dolenta.)
 
-[^seir]: For more technical explanations of the SEIR Model, see [the Institute for Disease Modeling](https://www.idmod.org/docs/hiv/model-seir.html) and [Wikipedia](https://en.wikipedia.org/wiki/Compartmental_models_in_epidemiology#The_SEIR_model)
+[^seir]: Per a més explicacions tèniques del Model SEIR, veieu [the Institute for Disease Modeling](https://www.idmod.org/docs/hiv/model-seir.html) i [Wikipedia](https://en.wikipedia.org/wiki/Compartmental_models_in_epidemiology#The_SEIR_model)
 
-For COVID-19, it's estimated that you're <icon e></icon> infected-but-not-yet-infectious for 3 days, *on average*.[^latent] What happens if we add that to the simulation?
+Per al COVID-19, s'estima que estàs <icon e></icon> infectat-però-no-encara-infecciós durant 3 dies, *en mitjana*.[^latent] Què passa si ho afegim a la simulació?
 
-[^latent]: “Assuming an incubation period distribution of mean 5.2 days from a separate study of early COVID-19 cases, we inferred that infectiousness started from 2.3 days (95% CI, 0.8–3.0 days) before symptom onset” (translation: Assuming symptoms start at 5 days, infectiousness starts 2 days before = Infectiousness starts at 3 days) [He, X., Lau, E.H.Y., Wu, P. et al.](https://www.nature.com/articles/s41591-020-0869-5)
+[^latent]: “Suposant una distribució del periode d'incubació de mitjana 5.2 dies a partir d'un estudi separat de cass de COVID-19, hem deduit que la capactat d'infecció començava a partir del 2.3 dies  (95% CI, 0.8–3.0 days) abans de l'inici dels símptomes" (Traduim: Suposant que els símptomes comencen als 5 dies, la capacitat d'infecció comença 2 dies abans = LA capacitat d'infecció comença al dia 3) [He, X., Lau, E.H.Y., Wu, P. et al.](https://www.nature.com/articles/s41591-020-0869-5)
 
-<b style='color:#ff4040'>Red <b style='color:#FF9393'>+ Pink</b> curve</b> is *current* cases (infectious <icon i></icon> + exposed <span class="nowrap"><icon e></icon>),</span>    
-<b style='color:#888'>Gray curve</b> is *total* cases (current + recovered <span class="nowrap"><icon r></icon>):</span>
+<b style='color:#ff4040'>La corba vermella <b style='color:#FF9393'>+ rosa</b> curve</b> son els casos *actuals* (infecciosos <icon i></icon> + exposats <span class="nowrap"><icon e></icon>),</span>    
+<b style='color:#888'>LA corba gris</b> son els *total* de casos (actuals + recuperats <span class="nowrap"><icon r></icon>):</span>
 
 <div class="sim">
 		<iframe src="sim?stage=epi-5" width="800" height="540"></iframe>
 </div>
 
-Not much changes! How long you stay <icon e></icon> Exposed changes the ratio of <span class="nowrap"><icon e></icon>-to-<icon i></icon>,</span> and *when* current cases peak... but the *height* of that peak, and total cases in the end, stays the same.
+No hi ha gaires canvis! El temps que estàs <icon e></icon> Exposat canvia la ratio de <span class="nowrap"><icon e></icon>-a-<icon i></icon>,</span> i *quan* els casos actuals arriben al pic... pero l'*alçada* del pic i els casos totals, es queden igual.
 
-Why's that? Because of the *first*-most important idea in Epidemiology 101:
+Per què passa? Pel *primer* concepte i el  més important de l'epidemiologia bàsica:
 
 ![](pics/r.png)
 
-Short for "Reproduction number". It's the *average* number of people an <icon i></icon> infects *before* they recover (or die).
+Abreviació del "nombre Reproductiu". És el nmbre *promig* de persones que un <icon i></icon> infecta *abans* de recuperar-se (or morir).
 
 ![](pics/r2.png)
 
-**R** changes over the course of an outbreak, as we get more immunity & interventions.
+**R** canvia en el decurs de l'epidèmia, si ens inmunitzem més  i fem més intervencions.
 
-**R<sub>0</sub>** (pronounced R-nought) is what R is *at the start of an outbreak, before immunity or interventions*. R<sub>0</sub> more closely reflects the power of the virus itself, but it still changes from place to place. For example, R<sub>0</sub> is higher in dense cities than sparse rural areas.
+**R<sub>0</sub>** és e que val R *al princpi de l'epidèmia, abans de la inmunitat o les intervencions*. R<sub>0</sub> reflecteix sobretot la capacitat del mateix virus, però canvia d'un lloc a un altre. Per exemple,  R<sub>0</sub> és més alt a les ciutats amb més densitat de població que a les àrees rurals i disperses.
 
-(Most news articles – and even some research papers! – confuse R and R<sub>0</sub>. Again, science terminology is bad)
+(La majoria dels articles nous - in inclús alguns articles de recerca! – confonen R i R<sub>0</sub>. Aquí també, la terminologia científica és dolenta)
 
-The R<sub>0</sub> for "the" seasonal flu is around 1.28[^r0_flu]. This means, at the *start* of a flu outbreak, each <icon i></icon> infects 1.28 others *on average.* (If it sounds weird that this isn't a whole number, remember that the "average" mom has 2.4 children. This doesn't mean there's half-children running about.)
+L'R<sub>0</sub> per a "la" gripa estacional està al voltant d'1.28[^r0_flu]. Això vol dir que, al *principi* d'una epidèmia de grip, cada <icon i></icon> infecta 1.28 persones *de promig.* (Si sona estrany que o sigui un nombre enter, recorda que una mare "promig" té 2.4 fills. I no hi ha fraccions de nens corrent pel món.)
 
-[^r0_flu]: “The median R value for seasonal influenza was 1.28 (IQR: 1.19–1.37)” [Biggerstaff, M., Cauchemez, S., Reed, C. et al.](https://bmcinfectdis.biomedcentral.com/articles/10.1186/1471-2334-14-480)
+[^r0_flu]: “El valor medià per R en la grip estacional era  1.28 (RIQ: 1.19–1.37)” [Biggerstaff, M., Cauchemez, S., Reed, C. et al.](https://bmcinfectdis.biomedcentral.com/articles/10.1186/1471-2334-14-480)
 
-The R<sub>0</sub> for COVID-19 is estimated to be around 2.2,[^r0_covid] though one *not-yet-finalized* study estimates it was 5.7(!) in Wuhan.[^r0_wuhan]
+L'R<sub>0</sub> pel COVID-19 es va estimar que estava al voltant de 2.2,[^r0_covid] però un estudi *encara-no-finalitzat* estima que era  5.7(!) a Wuhan.[^r0_wuhan]
 
-[^r0_covid]: “We estimated the basic reproduction number R0 of 2019-nCoV to be around 2.2 (90% high density interval: 1.4–3.8)” [Riou J, Althaus CL.](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7001239/)
+[^r0_covid]: “Hem estimat que el número bàsica de reproducció R0 deL 2019-nCoV està al voltant de 2.2 (interval d'alta densitat al 90%: 1.4–3.8)” [Riou J, Althaus CL.](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7001239/)
 
-[^r0_wuhan]: “we calculated a median R0 value of 5.7 (95% CI 3.8–8.9)” [Sanche S, Lin YT, Xu C, Romero-Severson E, Hengartner N, Ke R.](https://wwwnc.cdc.gov/eid/article/26/7/20-0282_article)
+[^r0_wuhan]: “Hem calculat un valor medià per R0 de 5.7 (95% IC 3.8–8.9)” [Sanche S, Lin YT, Xu C, Romero-Severson E, Hengartner N, Ke R.](https://wwwnc.cdc.gov/eid/article/26/7/20-0282_article)
 
-In our simulations – *at the start & on average* – an <icon i></icon> infects someone every 4 days, over 10 days. "4 days" goes into "10 days" two-and-a-half times. This means – *at the start & on average* – each <icon i></icon> infects 2.5 others. Therefore, R<sub>0</sub> = 2.5. (caveats:[^r0_caveats_sim])
+A la nostra dimulació – *al principi & en promig* – un <icon i></icon> infecta algú cada 4 dies, durant 10 dies. "4 dies" encaixa dins els "10 dies" dues vegades i mitja. Això vol dir que – *al primcipi & em promig* – cada <icon i></icon> infecta 2.5 persones. Per tant, R<sub>0</sub> = 2.5. (caveats:[^r0_caveats_sim])
 
-[^r0_caveats_sim]: This is pretending that you're equally infectious all throughout your "infectious period". Again, simplifications for educational purposes.
+[^r0_caveats_sim]: Això val si creus que ets igual d'infecciós durant tot el teu "periode infecciós". Un altre cop, simplificacions didàctiques.
+
+
+
 
 **Play with this R<sub>0</sub> calculator, to see how R<sub>0</sub> depends on recovery time & new-infection time:**
 
