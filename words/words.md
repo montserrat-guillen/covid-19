@@ -159,9 +159,9 @@ Abreviació del "nombre Reproductiu". És el nmbre *promig* de persones que un <
 
 ![](pics/r2.png)
 
-**R** canvia en el decurs de l'epidèmia, si ens inmunitzem més  i fem més intervencions.
+**R** canvia en el decurs de l'epidèmia, si ens immunitzem més  i fem més intervencions.
 
-**R<sub>0</sub>** és e que val R *al princpi de l'epidèmia, abans de la inmunitat o les intervencions*. R<sub>0</sub> reflecteix sobretot la capacitat del mateix virus, però canvia d'un lloc a un altre. Per exemple,  R<sub>0</sub> és més alt a les ciutats amb més densitat de població que a les àrees rurals i disperses.
+**R<sub>0</sub>** és e que val R *al princpi de l'epidèmia, abans de la immunitat o les intervencions*. R<sub>0</sub> reflecteix sobretot la capacitat del mateix virus, però canvia d'un lloc a un altre. Per exemple,  R<sub>0</sub> és més alt a les ciutats amb més densitat de població que a les àrees rurals i disperses.
 
 (La majoria dels articles nous - in inclús alguns articles de recerca! – confonen R i R<sub>0</sub>. Aquí també, la terminologia científica és dolenta)
 
@@ -179,56 +179,58 @@ A la nostra simulació – *al principi & en promig* – un <icon i></icon> infe
 
 [^r0_caveats_sim]: Això val si creus que ets igual d'infecciós durant tot el teu "periode infecciós". Un altre cop, simplificacions didàctiques.
 
-
-
-
-**Play with this R<sub>0</sub> calculator, to see how R<sub>0</sub> depends on recovery time & new-infection time:**
+**Juga amb aquesta calculadora d'R<sub>0</sub>, per veure com R<sub>0</sub> depèn dels temps de recuperació i d'infecció:**
 
 <div class="sim">
 		<iframe src="sim?stage=epi-6a&format=calc" width="285" height="255"></iframe>
 </div>
 
-But remember, the fewer <span class="nowrap"><icon s></icon>s</span> there are, the *slower* <span class="nowrap"><icon s></icon>s</span> become <span class="nowrap"><icon i></icon>s.</span> The *current* reproduction number (R) depends not just on the *basic* reproduction number (R<sub>0</sub>), but *also* on how many people are no longer <icon s></icon> Susceptible. (For example, by recovering & getting natural immunity.)
+
+Però recorda, com menys <span class="nowrap"><icon s></icon>s</span> hi ha, més a *poc a poc* els <span class="nowrap"><icon s></icon>s</span> passen a <span class="nowrap"><icon i></icon>s.</span> El nombre de reproducció *actual* (R) no només depèn del nombre de reproducció *basic* (R<sub>0</sub>), sinó *també* de quanta gent ja no és  <icon s></icon> Susceptible. (Per exemple, perquè es recupera & aconsegueix immunitat natural.)
 
 <div class="sim">
 		<iframe src="sim?stage=epi-6b&format=calc" width="285" height="390"></iframe>
 </div>
 
-When enough people have immunity, R < 1, and the virus is contained! This is called **herd immunity**. For flus, herd immunity is achieved *with a vaccine*. Trying to achieve "natural herd immunity" by letting folks get infected is a *terrible* idea. (But not for the reason you may think! We'll explain later.)
+Quan ja hi ha prou gent que té immunitat, R < 1, i el virus es conté! Això s'anomena **immunitat de grup**. Per a les grips, aquesta immunitat s'aconsegueix *amb una vacuna*. Mirar d'aconseguir "immunitat natural de grup" deixant que la gent s'infecti és una idea *horrible*. (Però no per les raons que creus! Ho explicarem després.)
 
-Now, let's play the SEIR Model again, but showing R<sub>0</sub>, R over time, and the herd immunity threshold:
+Ara, tornem a jugar amb el Model SEIR, però mirem R<sub>0</sub>, R al llarg del temps i el nivell de la immunitat de grup:
 
 <div class="sim">
 		<iframe src="sim?stage=epi-7" width="800" height="540"></iframe>
 </div>
 
-**NOTE: Total cases *does not stop* at herd immunity, but overshoots it!** And it crosses the threshold *exactly* when current cases peak. (This happens no matter how you change the settings – try it for yourself!)
 
-This is because when there are more <span class="nowrap">non-<icon s></icon>s</span> than the herd immunity threshold, you get R < 1. And when R < 1, new cases stop growing: a peak.
+**NOTA: El total de casos *no atura* al nivell de la immunitat de grup, la supera!** I creua el nivell en el moment *exacte* que els casos actuals arriben al pic. (Això passa independenyment dels ajustos que triïs – prova-ho tu mateix!)
 
-**If there's only one lesson you take away from this guide, here it is** – it's an extremely complex diagram so please take time to fully absorb it:
+Això passa perquè quan hi ha més <span class="nowrap">non-<icon s></icon>s</span> del nivell de la immunitat de grup, tens R < 1. I quan  R < 1, no augmenten més els casos nous: un pic.
+
+**Si hi ha una única lliçó que t'has d'emportar d'aquesta guia, aquí la tens!** – és un diagrama extremadament complex, per tant pren-te una mica de temps per a absorvir-lo:
 
 ![](pics/r3.png)
 
-**This means: we do NOT need to catch all transmissions, or even nearly all transmissions, to stop COVID-19!**
+**Signfica que: NO cal evitar tots els contagis, ni tan sols la gran majoria, per aturar el COVID-19**
 
-It's a paradox. COVID-19 is extremely contagious, yet to contain it, we "only" need to stop more than 60% of infections. 60%?! If that was a school grade, that's a D-. But if R<sub>0</sub> = 2.5, cutting that by 61% gives us R = 0.975, which is R < 1, virus is contained! (exact formula:[^exact_formula])
+És una paradoxa, el COVID-19 és extremadament contagiós, però per a controlar-lo, "només" cal que evitem més del 60% de contagis. El 60%?! Si això fos la nota d'un examen, seria un suspens clar. Però si R<sub>0</sub> = 2.5, ci el retallem un 61% tenims R = 0.975, que és R < 1, virus controlat! (fórmula exacta:[^exact_formula])
 
-[^exact_formula]: Remember R = R<sub>0</sub> * the ratio of transmissions still allowed. Remember also that ratio of transmissions allowed = 1 - ratio of transmissions *stopped*.
+[^exact_formula]: Recorda que  diem que R = R<sub>0</sub> *  és la taxa de transmissió permesa. Recorda també que la taxa de tramissió permesa = 1 - taxa de transmissió per a l'*aturada*.
     
-    Therefore, to get R < 1, you need to get R<sub>0</sub> * TransmissionsAllowed < 1. 
+    Per tant, per obtenir R<1, has de tenir R<sub>0</sub> * TransmissionsPermeses < 1.
+
+    Per tant, TransmissionsPermeses < 1/R<sub>0</sub>
+
+    Per tant, 1 - TransmissionsAturades < 1/R<sub>0</sub>
+   
+    Llavors, TransmissionsAturades > 1 - 1/R<sub>0</sub>
     
-    Therefore, TransmissionsAllowed < 1/R<sub>0</sub>
-    
-    Therefore, 1 - TransmissionsStopped < 1/R<sub>0</sub>
-    
-    Therefore, TransmissionsStopped > 1 - 1/R<sub>0</sub>
-    
-    Therefore, you need to stop more than **1 - 1/R<sub>0</sub>** of transmissions to get R < 1 and contain the virus!
+    I en conseQuència, has de parar més de l'**1 - 1/R<sub>0</sub>**  de les transmissions per a obtenir R < 1 i controlar el virus!
 
 ![](pics/r4.png)
 
-(If you think R<sub>0</sub> or the other numbers in our simulations are too low/high, that's good you're challenging our assumptions! There'll be a "Sandbox Mode" at the end of this guide, where you can plug in your *own* numbers, and simulate what happens.)
+
+(Si creus que R<sub>0</sub> o els altres nombres de les nostres simulacions són massa baixos/alts, està bé, estàs posant a prova les nostres hipótesis! Hi ha un mode *caixa d'eines* al final d'aquesta guia, on podràs posar els teus *propis* números, i simular què passa.)
+
+*Every* COVID-19 intervention you've heard of – handwashing, social/physical distancing, lockdowns, self-isolation, contact tracing & quarantining, face masks, even "herd immunity" – they're *all* doing the same thing:
 
 *Every* COVID-19 intervention you've heard of – handwashing, social/physical distancing, lockdowns, self-isolation, contact tracing & quarantining, face masks, even "herd immunity" – they're *all* doing the same thing:
 
