@@ -223,22 +223,20 @@ Això passa perquè quan hi ha més <span class="nowrap">non-<icon s></icon>s</s
    
     Llavors, TransmissionsAturades > 1 - 1/R<sub>0</sub>
     
-    I en conseQuència, has de parar més de l'**1 - 1/R<sub>0</sub>**  de les transmissions per a obtenir R < 1 i controlar el virus!
+    I en conseqüència, cal parar més de l'**1 - 1/R<sub>0</sub>**  de les transmissions per a obtenir R < 1 i controlar el virus!
 
 ![](pics/r4.png)
 
 
 (Si creus que R<sub>0</sub> o els altres nombres de les nostres simulacions són massa baixos/alts, està bé, estàs posant a prova les nostres hipótesis! Hi ha un mode *caixa d'eines* al final d'aquesta guia, on podràs posar els teus *propis* números, i simular què passa.)
 
-*Every* COVID-19 intervention you've heard of – handwashing, social/physical distancing, lockdowns, self-isolation, contact tracing & quarantining, face masks, even "herd immunity" – they're *all* doing the same thing:
+*Cada* intervenció COVID-19 de la què hagis sentit a parlar - rentat de mans, distanciament social/físic, confinaments, auto-isolació, seguiment de contactes & quanrentenes, mascaretes, inclosa la "immunitat de grup", *totes* fan el mateix:
 
-*Every* COVID-19 intervention you've heard of – handwashing, social/physical distancing, lockdowns, self-isolation, contact tracing & quarantining, face masks, even "herd immunity" – they're *all* doing the same thing:
+Aconseguir R < 1.
 
-Getting R < 1.
+Així que ara, usem el nostre "simulador de vol d'eidèmies" per entendre-ho: Com es podem fer que R < 1 d'una forma que **també es protegeixi la nostra salut mental *i* financera?**
 
-So now, let's use our "epidemic flight simulator" to figure this out: How can we get R < 1 in a way **that also protects our mental health *and* financial health?**
-
-Brace yourselves for an emergency landing...
+Agafa't fort per a un aterratget d'emergència...
 
 <div class="section chapter">
     <div>
@@ -247,56 +245,60 @@ Brace yourselves for an emergency landing...
     </div>
 </div>
 
-...could have been worse. Here's a parallel universe we avoided:
+... podria haver estat pitjor. Aquí hi ha un univers paral·lel que haurem evitat:
 
-###Scenario 0: Do Absolutely Nothing
+###Scenario 0: No fer absolutament res
 
-Around 1 in 20 people infected with COVID-19 need to go to an ICU (Intensive Care Unit).[^icu_covid] In a rich country like the USA, there's 1 ICU bed per 3400 people.[^icu_us] Therefore, the USA can handle 20 out of 3400 people being *simultaneously* infected – or, 0.6% of the population.
+Aproximadament 1 de cada 20 perones infectades de COVID-19 han d'anar a l'UCI (Unitat de Cures Intensives.[^icu_covid]  A un país ric com els EUA, hi ha 1 llit per cada 3400 persones.[^icu_us] Per tant, als EUA es pot soportar una situació de 20 persones infectades *simultàniament* ce cada 3400 - o, el 0.6% de la població.
 
-[^icu_covid]: ["Percentage of COVID-19 cases in the United States from February 12 to March 16, 2020 that required intensive care unit (ICU) admission, by age group"](https://www.statista.com/statistics/1105420/covid-icu-admission-rates-us-by-age-group/). Between 4.9% to 11.5% of *all* COVID-19 cases required ICU. Generously picking the lower range, that's 5% or 1 in 20. Note that this total is specific to the US's age structure, and will be higher in countries with older populations, lower in countries with younger populations.
+[^icu_covid]: ["Percentatge de casos COVID-19 als Estats Units entre el 12 de febrer i el 16 de març de 2020 que van necessitar ingressar a una unitat de cures intensives (UCI) per hrup d'edat""](https://www.statista.com/statistics/1105420/covid-icu-admission-rates-us-by-age-group/). Entre el 4.9% i l'11.5% de *tots* els casos COVID-19 van requerir entrar a l'UCI. Si prenem generosament el rang inferior, és un 5%, és a dir 1 de cada 20. Cal tenir en compte que aquest total és específic de l'estructura d'edats dels EUA, i que serà més alt en paísos amb una població més envellida, més baix en paísos amb un població més jove.
 
-[^icu_us]: “Number of ICU beds = 96,596”. From [the Society of Critical Care Medicine](https://sccm.org/Blog/March-2020/United-States-Resource-Availability-for-COVID-19) USA Population was 328,200,000 in 2019. 96,596 out of 328,200,000 = roughly 1 in 3400. 
+[^icu_us]: “Número de llits UCI = 96,596”. A partir de [the Society of Critical Care Medicine](https://sccm.org/Blog/March-2020/United-States-Resource-Availability-for-COVID-19) La població dels EUA era 328,200,000 al 2019. 96,596 dels 328,200,000 = aproximadament 1 de cada 3400. 
 
-Even if we *more than tripled* that capacity to 2%, here's what would've happened *if we did absolutely nothing:*
+Inclús si *tripliquéssim* aquesta capacitat fins al 2%, aquí tenim el què hauria passat *si no haguéssim fet res:*
 
 <div class="sim">
 		<iframe src="sim?stage=int-1&format=lines" width="800" height="540"></iframe>
 </div>
 
-Not good.
+Gens bo.
 
-That's what [the March 16 Imperial College report](http://www.imperial.ac.uk/mrc-global-infectious-disease-analysis/covid-19/report-9-impact-of-npis-on-covid-19/) found: do nothing, and we run out of ICUs, with more than 80% of the population getting infected. 
-(remember: total cases *overshoots* herd immunity)
+Això és el que l'informe [the March 16 Imperial College report](http://www.imperial.ac.uk/mrc-global-infectious-disease-analysis/covid-19/report-9-impact-of-npis-on-covid-19/) va concloure: si no fem res, ens falten UCIs, i tenim a més del 80% de la població infectada. 
+(recorda: el total de casos *supera* la immunitat de grup)
 
-Even if only 0.5% of infected die – a generous assumption when there's no more ICUs – in a large country like the US, with 300 million people, 0.5% of 80% of 300 million = still 1.2 million dead... *IF we did nothing.*
+Inclús si només el 0.5% dels infectats es mor  una hipòtesi generosa quan ja no queden UCIs - en un país gran com els EUA, amb 300 milions d'habitants, 0.5% del 80% de 300 milions = arribem a 1.2 milions de morts...*SI no haguéssim fet res*
 
-(Lots of news & social media reported "80% will be infected" *without* "IF WE DO NOTHING". Fear was channelled into clicks, not understanding. *Sigh.*)
+(Molts mitjans socials i de comunicació van dir que "s'infectarien el 80%" igualment *sense* el "SI NO FEM RES". La por es va canalitzar en cliks, no en aprenentatge. *Buf.*)
 
-###Scenario 1: Flatten The Curve / Herd Immunity
 
-The "Flatten The Curve" plan was touted by every public health organization, while the United Kingdom's original "herd immunity" plan was universally booed. They were *the same plan.* The UK just communicated theirs poorly.[^yong]
+###Scenario 1: Aplanar la Corba / Immunitat de Grup
 
-[^yong]: “He says that the actual goal is the same as that of other countries: flatten the curve by staggering the onset of infections. As a consequence, the nation may achieve herd immunity; it’s a side effect, not an aim. [...] The government’s actual coronavirus action plan, available online, doesn’t mention herd immunity at all.”
+El pla "Aplanar la Corba" va ser aclamat per totes les organitzacions de salut pública, mentre que el pla "Immunitat de Grup* original del Regne Unit va ser criticat. Eren *el mateix pla*. Només que el Regne Unit el va comunicar malamet.[^yong]
+
+[^yong]: “Diu que la finalittat és la mateixa que als altre països: aplanar la corba esglaonant l'inici de les infeccions. Com a conseqUència, tot el país aconsegueix la immunitat de grup; és un efecte secundari, no un objectiu  [...]  El pla d'acció del govern contra el coronavirus que hi ha a la xarxa, no esmenta per res la immunitat de grup.”
     
-    From a [The Atlantic article by Ed Yong](https://www.theatlantic.com/health/archive/2020/03/coronavirus-pandemic-herd-immunity-uk-boris-johnson/608065/)
+    Extret de [The Atlantic article by Ed Yong](https://www.theatlantic.com/health/archive/2020/03/coronavirus-pandemic-herd-immunity-uk-boris-johnson/608065/)
 
-Both plans, though, had a literally fatal flaw.
+Els dos plans, malgrat tot, tenien un defecte literalment fatal.
 
-First, let's look at the two main ways to "flatten the curve": handwashing & physical distancing.
+Primer, mmirem a les dues formes d'"aplanar la corba": rentat de mans & distanciament físic.
 
-Increased handwashing cuts flus & colds in high-income countries by ~25%[^handwashing], while the city-wide lockdown in London cut close contacts by ~70%[^london]. So, let's assume handwashing can reduce R by *up to* 25%, and distancing can reduce R by *up to* 70%:
+Incrementar el rentat de mans atura els refredats & grips en els països de renda alta en aprox. un 5%[^handwashing], mentre que un confinament global de la ciutat de Londres va tallar es contactes d'aprox. un 70%[^london]. Per tant, suposarem que el rentat de mans redueix R *fins a ^un 25% i el distanciament el pot reduir *fins a* un 70%.
 
-[^handwashing]: “All eight eligible studies reported that handwashing lowered risks of respiratory infection, with risk reductions ranging from 6% to 44% [pooled value 24% (95% CI 6–40%)].” We rounded up the pooled value to 25% in these simulations for simplicity. [Rabie, T. and Curtis, V.](https://onlinelibrary.wiley.com/doi/full/10.1111/j.1365-3156.2006.01568.x) Note: as this meta-analysis points out, the quality of studies for handwashing (at least in high-income countries) are awful.
+[^handwashing]: “Els vuit estudis indiquen que el rentat de mans reueix el risc d'infecció respiratòria, amb reduccions d'entre un 6% i un 44% [valor agrupat 24% (95% IC 6–40%)].” Nosaltres hem arrodonit el valor agrupat al 25% en aquestes simulacions per a simplificar. [Rabie, T. and Curtis, V.](https://onlinelibrary.wiley.com/doi/full/10.1111/j.1365-3156.2006.01568.x) Nota: com es diu en aquesta meta-anàlisi, la qualitat dels estudis del rentat de mans (al menys en el païsso de rendes altes) és horrible.
 
-[^london]: “We found a 73% reduction in the average daily number of contacts observed per participant. This would be sufficient to reduce R0 from a value from 2.6 before the lockdown to 0.62 (0.37 - 0.89) during the lockdown”. We rounded it down to 70% in these simulations for simplicity. [Jarvis and Zandvoort et al](https://cmmid.github.io/topics/covid19/comix-impact-of-physical-distance-measures-on-transmission-in-the-UK.html)
+[^london]: “Vàrem trobar una reducció del 73% en el nombre mitjà de contactes diaris observats per participants. Això seria suficient per a reduir R0 del valor de 2.6 abans del confinament fins a 0.62 (0.37 - 0.89) durant el confinament”. Nosaltres ho hem arrodonit al 70% a les nostres simulacions per simplificar [Jarvis and Zandvoort et al](https://cmmid.github.io/topics/covid19/comix-impact-of-physical-distance-measures-on-transmission-in-the-UK.html)
 
-**Play with this calculator to see how % of <span class="nowrap">non-<icon s></icon>,</span> handwashing, and distancing reduce R:** (this calculator visualizes their *relative* effects, which is why increasing one *looks* like it decreases the effect of the others.[^log_caveat])
+**Juga amb aquesta calucladora per veure com % dels <span class="nowrap">no-<icon s></icon>,</span> el rentat de mans i el distanciament redueixen  R:** ( aquesta calculadora visulaitza els seus efectes *relatius*, i per això quan una creix *sembla* que decreixi l'efecte de les altres.[^log_caveat])
 
-[^log_caveat]: This distortion would go away if we plotted R on a logarithmic scale... but then we'd have to explain *logarithmic scales.*
+[^log_caveat]: Aquesta distorció desapareixeria si féssim una gràfica de l'R en una escala logarítmica... però aleshores hauriem d'explicar les *escales logarítmiques.*
 
 <div class="sim">
 		<iframe src="sim?stage=int-2a&format=calc" width="285" height="260"></iframe>
 </div>
+
+
+
 
 Now, let's simulate what happens to a COVID-19 epidemic if, starting March 2020, we had increased handwashing but only *mild* physical distancing – so that R is lower, but still above 1:
 
