@@ -24,7 +24,7 @@
 
 "Només cal tenir por a la por mateixa". Consell per tontos.
 
-És clar, potser que no acumulem paper de WC - pero si els polítics tenen por a la por, tendiran a minitmitzar els perills reals per a evitar la "histèria col·lectiva". La por no és el problema, sinó com "canalitzem" aquesta por. La por ens dona energia per a afrontar el perills actuals i preparar-nos per als què vindran.
+És clar, potser que no acumulem paper de WC - però si els polítics tenen por a la por, tendiran a minitmitzar els perills reals per a evitar la "histèria col·lectiva". La por no és el problema, sinó com "canalitzem" aquesta por. La por ens dona energia per a afrontar el perills actuals i preparar-nos per als què vindran.
 
 Honradament, nosaltres (Marcel, epidemiòleg + Nicky, art/codi) estem preocupats. I pensem que tu també!. Per això hem decidit posar-nos a canalitzar la nostra por a través d'aquestes **simulacions interactives**,  i fer que *tu* transformis la por en coneixement:
 
@@ -36,7 +36,7 @@ L'objectiu d'aquesta guia (publicada el dia 1 de Maig de 2020, clica aquesta not
 
 [^timestamp]: Aquestes notes a peu de pàgina contenen referències, links i commentaris extres. Com aquest!
     
-    **Aquesta guia va ser publicada el dia 1 de maig de 2020.** Hi ha molts detalls que quedaran obsolets, però tenim  confiança que aquesta guia cobreix el 95% dels possibles escenaris futurs, i que l'epidemiologia bàsica sempre serà útil.
+    **Aquesta guia va ser publicada el dia 1 de maig de 2020.** Hi ha molts detalls que quedaran obsolets, però tenim confiança que cobreix el 95% dels possibles escenaris futurs, i que l'epidemiologia bàsica sempre serà útil.
 
 Per tant, corda't el cinturó, que s'acosten turbulències!
 
@@ -151,7 +151,7 @@ Per al COVID-19, s'estima que estàs <icon e></icon> infectat-però-no-encara-in
 
 No hi ha gaires canvis! El temps que estàs <icon e></icon> Exposat canvia la ratio de <span class="nowrap"><icon e></icon>-a-<icon i></icon>,</span> i *quan* els casos actuals arriben al pic... pero l'*alçada* del pic i els casos totals, es queden igual.
 
-Per què passa? Pel *primer* concepte i el  més important de l'epidemiologia bàsica:
+Per què passa? Pel *primer* concepte i el més important de l'epidemiologia bàsica:
 
 ![](pics/r.png)
 
@@ -175,7 +175,7 @@ L'R<sub>0</sub> pel COVID-19 es va estimar que estava al voltant de 2.2,[^r0_cov
 
 [^r0_wuhan]: “Hem calculat un valor medià per R0 de 5.7 (95% IC 3.8–8.9)” [Sanche S, Lin YT, Xu C, Romero-Severson E, Hengartner N, Ke R.](https://wwwnc.cdc.gov/eid/article/26/7/20-0282_article)
 
-A la nostra dimulació – *al principi & en promig* – un <icon i></icon> infecta algú cada 4 dies, durant 10 dies. "4 dies" encaixa dins els "10 dies" dues vegades i mitja. Això vol dir que – *al primcipi & em promig* – cada <icon i></icon> infecta 2.5 persones. Per tant, R<sub>0</sub> = 2.5. (caveats:[^r0_caveats_sim])
+A la nostra simulació – *al principi & en promig* – un <icon i></icon> infecta algú cada 4 dies, durant 10 dies. "4 dies" encaixa dins els "10 dies" dues vegades i mitja. Això vol dir que – *al primcipi & em promig* – cada <icon i></icon> infecta 2.5 persones. Per tant, R<sub>0</sub> = 2.5. (caveats:[^r0_caveats_sim])
 
 [^r0_caveats_sim]: Això val si creus que ets igual d'infecciós durant tot el teu "periode infecciós". Un altre cop, simplificacions didàctiques.
 
