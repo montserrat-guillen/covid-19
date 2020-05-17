@@ -271,7 +271,7 @@ Inclús si només el 0.5% dels infectats es mor  una hipòtesi generosa quan ja 
 (Molts mitjans socials i de comunicació van dir que "s'infectarien el 80%" igualment *sense* el "SI NO FEM RES". La por es va canalitzar en cliks, no en aprenentatge. *Buf.*)
 
 
-###Scenario 1: Aplanar la Corba / Immunitat de Grup
+###Escenari 1: Aplanar la Corba / Immunitat de Grup
 
 El pla "Aplanar la Corba" va ser aclamat per totes les organitzacions de salut pública, mentre que el pla "Immunitat de Grup* original del Regne Unit va ser criticat. Eren *el mateix pla*. Només que el Regne Unit el va comunicar malamet.[^yong]
 
@@ -298,31 +298,32 @@ Incrementar el rentat de mans atura els refredats & grips en els països de rend
 </div>
 
 
-
-
-Now, let's simulate what happens to a COVID-19 epidemic if, starting March 2020, we had increased handwashing but only *mild* physical distancing – so that R is lower, but still above 1:
+Ara, simulem què li passa a una epidèmia COVID-19 si a partir del 20 març de 2020 ens haguéssim rentat més les mans, però només ens haguéssim fert un distanciament físic *moderadat* - així que R serà inferior, però encara per sobre d'1:
 
 <div class="sim">
 		<iframe src="sim?stage=int-2&format=lines" width="800" height="540"></iframe>
 </div>
 
-Three notes:
 
-1. This *reduces* total cases! **Even if you don't get R < 1, reducing R still saves lives, by reducing the 'overshoot' above herd immunity.** Lots of folks think "Flatten The Curve" spreads out cases without reducing the total. This is impossible in *any* Epidemiology 101 model. But because the news reported "80%+ will be infected" as inevitable, folks thought total cases will be the same no matter what. *Sigh.*
+Tres notes: 
 
-2. Due to the extra interventions, current cases peak *before* herd immunity is reached. In fact, in this simulation, total cases only overshoots *a tiny bit* above herd immunity – the UK's plan! At that point, R < 1, you can let go of all other interventions, and COVID-19 stays contained! Well, except for one problem...
 
-3. You still run out of ICUs. For several months. (and remember, we *already* tripled ICUs for these simulations)
+1. Això *redueix* el total de casos! **Inclús si no obtens R < 1, la reducció d'R encara salva vides i redueix el 'pas' per sobre de la immunitat de grup.** Molta gent pensa que "Aplanar la Corba" escampa els casos sens reduir el total. Això és impossible per *qualsevol* que sigui el model d'Epidemiologia bàsica. Però com que les notícies han dit que no es pot evitar que "més del 80% s'infectin", la gent pensque que el total de casos serà el mateix passi el que passi. *Buf!*
 
-That was the other finding of the March 16 Imperial College report, which convinced the UK to abandon its original plan. Any attempt at **mitigation** (reduce R, but R > 1) will fail. The only way out is **suppression** (reduce R so that R < 1).
+2. Degut a les intervencions extres, els casos actuals tenen el pic *abans* d'arribar a la immunitat de grup. De fet, en aquesta simulació, el total de casoso nomes passa *una miquetona* per sobre de la immunitat de grup - el pla del Regne Unit! En aquest punt, R <1, i per tant es ponen abandonar la resta d'intervenciona, i la COVID-19 queda controlada! Bé, només que hi ha un petit problema... 
+
+3. Encara et pots quedar sense UCIs. Durant bastants mesos (i recorda, *ja* hem triplicat les UCIs per a aquestes simulacions)
+
+
+Aquesta era la conclusió de l'informe de l'Imperial College del 16 de març, que va comvèncer el Regne Unit d'abandonar el seu pla original. Qualsevol intent de **mitigació** (reduir R, però R > 1) fracassrà. L'única forma és la **supressió** (reduir R per tenir R < 1).
 
 ![](pics/mitigation_vs_suppression.png)
 
-That is, don't merely "flatten" the curve, *crush* the curve. For example, with a...
+Per tant, no només cal äplanar la corba*, cal *esclafar-la*. Per exemple, amb un... 
 
-###Scenario 2: Months-Long Lockdown
+###Escenari 2: Confinament durant mesos
 
-Let's see what happens if we *crush* the curve with a 5-month lockdown, reduce <icon i></icon> to nearly nothing, then finally – *finally* – return to normal life:
+Veiem què passa si *esclafem* la corba amb un confinament de 5 mesos, reduim <icon i></icon> a gairebé el no res, i llavors finalment - *finalment* - tornem a la vida normal:
 
 <div class="sim">
 		<iframe src="sim?stage=int-3&format=lines" width="800" height="540"></iframe>
@@ -330,73 +331,76 @@ Let's see what happens if we *crush* the curve with a 5-month lockdown, reduce <
 
 Oh.
 
-This is the "second wave" everyone's talking about. As soon as we remove the lockdown, we get R > 1 again. So, a single leftover <icon i></icon> (or imported <span class="nowrap"><icon i></icon>)</span> can cause a spike in cases that's almost as bad as if we'd done Scenario 0: Absolutely Nothing.
+Aquesta és la "segona onada" de la què tothom parla. Tan bon punt acabem amb l confinament, tenim R > 1 un altre cop. Per tant, un únic icon i></icon> (o un cas importat  <span class="nowrap"><icon i></icon>)</span>  pot provocar un nou pic de casos i això és tan dolent com si haguéssim optat per l'Escenari 0: Absolutament res.
 
-**A lockdown isn't a cure, it's just a restart.**
+**El confinament no és una cura, només és un reinici.**
 
-So, what, do we just lockdown again & again?
+Llavors, què, ens anem confinant una vegada darrera una altra?
 
-###Scenario 3: Intermittent Lockdown
+###Escenari 3: Confinaments Intermitents
 
-This solution was first suggested by the March 16 Imperial College report, and later again by a Harvard paper.[^lockdown_harvard]
+Aquesta solució va ser proposada per primera vegada a l'informe de l'Imperial College del 16 de març, i més tard també en un article de Harvard.[^lockdown_harvard]
 
-[^lockdown_harvard]: “Absent other interventions, a key metric for the success of social distancing is whether critical care capacities are exceeded. To avoid this, prolonged or intermittent social distancing may be necessary into 2022.” [Kissler and Tedijanto et al](https://science.sciencemag.org/content/early/2020/04/14/science.abb5793)
+[^lockdown_harvard]: “En absència d'altre intervencions, una mètrica clau per a l'èxit del distanciament social és si s'excedeix la capacitat sanitària dels malalts crítics. Per a evitar-ho, el distanciament social perllongat o intermitent pot ser necessari fins al 2022.” [Kissler and Tedijanto et al](https://science.sciencemag.org/content/early/2020/04/14/science.abb5793)
 
-**Here's a simulation:** (After playing the "recorded scenario", you can try simulating your *own* lockdown schedule, by changing the sliders *while* the simulation is running! Remember you can pause & continue the sim, and change the simulation speed)
+
+**Aquí hi ha la simulació:** (Després de veure l'"escenari gravat", pots provar simulacions amb el teu *propi* calendari de confinaments, canviant les barrees, *mentre* es va fent la simulació! Recorda que pots aturar & continuar la simulació, i canviar la velocitat de simulació)
 
 <div class="sim">
 		<iframe src="sim?stage=int-4&format=lines" width="800" height="540"></iframe>
 </div>
 
-This *would* keep cases below ICU capacity! And it's *much* better than an 18-month lockdown until a vaccine is available. We just need to... shut down for a few months, open up for a few months, and repeat until a vaccine is available. (And if there's no vaccine, repeat until herd immunity is reached... in 2022.)
+Això *hauria* de mantenir els casos per sota de la capacitat de les UCIs! I és *molt* milor que un confinament de 18 mesos fins que hi hagi una vacuna. Només hem de ...tancar durant uns mesos, obrir uns quants mesos, i repetir-ho fins que hi hagi vacuna. (I si no hi ha vacuna, repetir-ho fins que hi hagi immunitat de grup... al 2022.)
 
-Look, it's nice to draw a line saying "ICU capacity", but there's lots of important things we *can't* simulate here. Like:
+Mira, està bé dibuixar una línia que sigui "capacitat de les UCIs*, però hi ha moltes coses importants que *no podem* smular aquí. Per exemple:
 
-**Mental Health:** Loneliness is one of the biggest risk factors for depression, anxiety, and suicide. And it's as associated with an early death as smoking 15 cigarettes a day.[^loneliness]
+La **Salut Mental:** La soledat és un dels factors de risc més grans de la depressió, l'ansietat, el suicidi. I està associada amb mort prematura tant com el fmar 15 cigarretes per dia.[^loneliness]
 
-[^loneliness]: See [Figure 6 from Holt-Lunstad & Smith 2010](https://journals.sagepub.com/doi/abs/10.1177/1745691614568352). Of course, big disclaimer that they found a *correlation*. But unless you want to try randomly assigning people to be lonely for life, observational evidence is all you're gonna get.
+[^loneliness]: Veure [Figura 6 de Holt-Lunstad & Smith 2010](https://journals.sagepub.com/doi/abs/10.1177/1745691614568352). Per suposat, cal avisar que van trobar una *correlació*. Però, si no volem assignar aleatòriament gent a estar sola de per vida, el màxim que podem tenir és evidència observacional.
 
-**Financial Health:** "What about the economy" sounds like you care more about dollars than lives, but "the economy" isn't just stocks: it's people's ability to provide food & shelter for their loved ones, to invest in their kids' futures, and enjoy arts, foods, videogames – the stuff that makes life worth living. And besides, poverty *itself* has horrible impacts on mental and physical health.
+**Salut Financera:** "Què passa amb l'economia" sona com que et preocupes dels diners més que per les vides, però "l'economia" no només són les borses: és que tothom pugui tenir menjar i on viure amb els seus éssers estimats, pugui invertir en el futur dels seus fills, gaudir de l'art, la gastronomia, els videojocs - tot això que fa que valgui la pena viure, la pobresa *per si sola* té un impacte horrible en la salut mental i física.
 
-Not saying we *shouldn't* lock down again! We'll look at "circuit breaker" lockdowns later. Still, it's not ideal.
+No diem que *no ens hauriem* de tornar a confinar! Mirarem després els confinaments "curt-cuits". Però, no és l'ideal.
 
-But wait... haven't Taiwan and South Korea *already* contained COVID-19? For 4 whole months, *without* long-term lockdowns?
+Però espera, ... no han pogut *ja* contraolar la COVID-19 Taiwan i Corea del Sud? Durant 4 mesos sencers, *sense* confinaments llargs?
 
-How?
+Com?
 
-###Scenario 4: Test, Trace, Isolate
+###Escenari 4: Tests, Seguiment, AÏllament
 
-*"Sure, we \*could've\* done what Taiwan & South Korea did at the start, but it's too late now. We missed the start."*
+*"Clar, *podríem* haver fet el mateix que Taiwan & Corea del Sud al principi, però ara ja és massa tard. Ens vam perdre el començament.*
 
-But that's exactly it! “A lockdown isn't a cure, it's just a restart”... **and a fresh start is what we need.**
+Però és exactament aixo! “Un confinament no és una cura, només és un reinici”...**i començar de nou és el que necessitem.**
 
-To understand how Taiwan & South Korea contained COVID-19, we need to understand the exact timeline of a typical COVID-19 infection[^timeline]:
+Per entendre com Taiwan & Corea del Sud van controlar la COVID-19, hem d'entendre la cronologia exacta d'una infecció típica COVID-19[^timeline]:
 
-[^timeline]: **3 days on average to infectiousness:** “Assuming an incubation period distribution of mean 5.2 days from a separate study of early COVID-19 cases, we inferred that infectiousness started from 2.3 days (95% CI, 0.8–3.0 days) before symptom onset” (translation: Assuming symptoms start at 5 days, infectiousness starts 2 days before = Infectiousness starts at 3 days) [He, X., Lau, E.H.Y., Wu, P. et al.](https://www.nature.com/articles/s41591-020-0869-5)  
+[^timeline]: **3 dies de promig fins a poder infectar:** “Suposant una distribució del periode d'incubació de mitjana 5.2 dies a partir d'un estudi inicial dels primers casos de COVID-19, hem trobat que la capacotat d'infecció començava a partir de 2.3 dies (IC 95%, 0.8-3.0 dies) abans que comencessin els símptomes” (traducció: Suposat que els símptmes comencen al cap de 5 dies, la capacitat d'infectar comença 2 dies abans = comença al tercer dia) [He, X., Lau, E.H.Y., Wu, P. et al.](https://www.nature.com/articles/s41591-020-0869-5)  
     
-    **4 days on average to infecting someone else:** “The mean [serial] interval was 3.96 days (95% CI 3.53–4.39 days)” [Du Z, Xu X, Wu Y, Wang L, Cowling BJ, Ancel Meyers L](https://wwwnc.cdc.gov/eid/article/26/6/20-0357_article)
+    **4 dies de promig per a infectar algú altre:** “L'interval mitjà [serial] era 3.96 dies (IC 95% 3.53–4.39 dies)” [Du Z, Xu X, Wu Y, Wang L, Cowling BJ, Ancel Meyers L](https://wwwnc.cdc.gov/eid/article/26/6/20-0357_article)
     
-    **5 days on average to feeling symptoms:** “The median incubation period was estimated to be 5.1 days (95% CI, 4.5 to 5.8 days)” [Lauer SA, Grantz KH, Bi Q, et al](https://annals.org/AIM/FULLARTICLE/2762808/INCUBATION-PERIOD-CORONAVIRUS-DISEASE-2019-COVID-19-FROM-PUBLICLY-REPORTED)
+    **5 dies de promig per a notar els símptomess:** “La mediana del periode d'incubació es va estimar que era de 5.1 dies (IC 95%, 4.5 a 5.8 dies)” [Lauer SA, Grantz KH, Bi Q, et al](https://annals.org/AIM/FULLARTICLE/2762808/INCUBATION-PERIOD-CORONAVIRUS-DISEASE-2019-COVID-19-FROM-PUBLICLY-REPORTED)
 
 ![](pics/timeline1.png)
 
-If cases only self-isolate when they know they're sick (that is, they feel symptoms), the virus can still spread:
+Si els casos només d'auto-aïllen quan saben que estan malalts (és a dir, quan noten els símptomes), el vius encara es pot escampar:
 
 ![](pics/timeline2.png)
 
-And in fact, 44% of all transmissions are like this: *pre*-symptomatic! [^pre_symp]
+I de fet, el 44% de totes les transissions són així: *pre*-simptomàtiques! [^pre_symp]
 
-[^pre_symp]: “We estimated that 44% (95% confidence interval, 25–69%) of secondary cases were infected during the index cases’ presymptomatic stage” [He, X., Lau, E.H.Y., Wu, P. et al](https://www.nature.com/articles/s41591-020-0869-5)
+[^pre_symp]: “Varem estimar que el 44% (interval de confiança 95%, 25–69%) dels casos secundaris van ser infectats durant la fase presimptomàtica dels casos indexats” [He, X., Lau, E.H.Y., Wu, P. et al](https://www.nature.com/articles/s41591-020-0869-5)
 
-But, if we find *and quarantine* a symptomatic case's recent close contacts... we stop the spread, by staying one step ahead!
-
+Però, si trobem *i podem en quanrentena* tots els contactes recents propers del casos simptomatics...aturem l'expansió, anant un pas per davant!
 ![](pics/timeline3.png)
 
-This is called **contact tracing**. It's an old idea, was used at an unprecedented scale to contain Ebola[^ebola], and now it's core part of how Taiwan & South Korea are containing COVID-19!
+Això es diu **seguiment de contactes**. És una idea vella, que va ser usada a una escala sense precedents per controlat l'Ebola[^ebola],  i ara és l'essència de com Taiwan & Corea del Sud estan controlant la COVID-19!
 
-[^ebola]: “Contact tracing was a critical intervention in Liberia and represented one of the largest contact tracing efforts during an epidemic in history.” [Swanson KC, Altare C, Wesseh CS, et al.](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6152989/)
+[^ebola]: “El seguiment de contactees va ser una intervenció essencial a Liberia i va representar un dels esforços més grans de la història de seguiment de contactes durant una epidèmia.” [Swanson KC, Altare C, Wesseh CS, et al.](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6152989/)
 
-(It also lets us use our limited tests more efficiently, to find pre-symptomatic <span class="nowrap"><icon i></icon>s</span> without needing to test almost everyone.)
+(I també ens porta a usar de manera meS eficient els pocs tests que tenim, per trobar els <span class="nowrap"><icon i></icon>s</span>  pre-simptomàtics sense haver de testejar tothom.)
+
+
+
 
 Traditionally, contacts are found with in-person interviews, but those *alone* are too slow for COVID-19's ~48 hour window. That's why contact tracers need help, and be supported by – *NOT* replaced by – contact tracing apps.
 
